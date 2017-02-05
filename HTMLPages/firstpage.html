@@ -1,0 +1,105 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="E:\Choreo\HTML5\jsGlobal\jsGlobal.js"></script>
+    <script src="E:\Choreo\HTML5\jsGlobal\jsRect.js"></script>
+    <script src="E:\Choreo\HTML5\jsGlobal\jsSelector.js"></script>
+    <script src="E:\Choreo\HTML5\jsGlobal\jsEvent.js"></script>
+    <script src="E:\Choreo\HTML5\jsGlobal\jsConnector.js"></script>
+    <script src="E:\Choreo\HTML5\jQuery\jquery-3.0.0.js"></script>
+
+    <style>
+    .textContent{
+      z-index : -1;
+    }
+
+    .noselect {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;   /* Chrome/Safari/Opera */
+      -khtml-user-select: none;    /* Konqueror */
+      -moz-user-select: none;      /* Firefox */
+      -ms-user-select: none;       /* Internet Explorer/Edge */
+      user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+    }
+    </style>
+<title>Trying to divide the page</title>
+</head>
+<body>
+  <input hidden="true" value="blank" id="module">
+  <div id="header" style="display:none">
+    <center>To Do : Divide page into div blocks</center>
+  </div>
+  <table id="pageHolder">
+    <tr>
+      <td>
+  <div id="Element_Picker" style="display:none" >
+    <table border="1">
+        <td>
+          <div id="startEvent" draggable="true" ondragstart="markElement(event, this.id)">
+            <svg id="startEventSvg" width="40" height="40">
+            </svg>
+          </div>
+        </td>
+        <td colspan="2">
+          <div id="process" draggable="true" ondragstart="markElement(event, this.id)">
+            <svg id="processSvg" width="80" height="40">
+            </svg>
+          </div></td>
+        <td>
+          <div id="selector" draggable="true" ondragstart="markElement(event, this.id)">
+            <svg id="selectorSvg" width="40" height="40">
+            </svg>
+          </div>
+        </td>
+        <td>
+          <div id="parallel" draggable="true" ondragstart="markElement(event, this.id)">
+            <svg id="parallelSvg" width="40" height="40">
+            </svg>
+          </div>
+        </td>
+        <td>
+          <div id="join" draggable="true" ondragstart="markElement(event, this.id)">
+            <svg id="joinSvg" width="40" height="40">
+            </svg>
+          </div>
+        </td>
+        <td>
+          <div id="connector" draggable="false" onclick="markConnector()">
+            <svg id="connectorSvg" width="40" height="40">
+            </svg>
+          </div>
+        </td>
+        <td>
+          <div id="eventHolder" draggable="true" ondragstart="markElement(event, this.id)">
+            <svg id="eventSvg" width="40" height="40">
+            </svg>
+          </div>
+        </td>
+        <td>
+          <div id="endEvent" draggable="true" ondragstart="markElement(event, this.id)">
+            <svg id="endEventSvg" width="40" height="40">
+            </svg>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</td>
+</tr>
+<tr>
+<td>
+  <div id="drawSvg" style="display:block" ondrop="addElement(event)" ondragover="overrideDefaultHandling(event)" >
+    <!--
+    <svg id="defaultSvg" width="200" height="200">
+      <rect x="493" y="139" id="rect1" width="30" height="10" style="fill:red;"></rect></svg>
+    </svg>
+  -->
+  </div>
+</td>
+</tr>
+</table>
+</body>
+
+</html>
